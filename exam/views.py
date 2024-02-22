@@ -15,7 +15,3 @@ class CourseListApiView(generics.ListAPIView):
     serializer_class = CourseSerializer
 
 
-
-  """
-  Thank for everything
-  """
