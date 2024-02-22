@@ -13,3 +13,9 @@ class VideoListApiView(generics.ListAPIView):
 class CourseListApiView(generics.ListAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+
+
+
+  """
+  Thank for everything
+  """
