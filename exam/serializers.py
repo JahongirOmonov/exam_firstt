@@ -1,25 +1,39 @@
-from .models import Video, Course
+from .models import Lesson, Course, UserCourse, UserLesson, WatchingLesson
 from rest_framework import serializers
 
-class VideosSerializer(serializers.ModelSerializer):
+
+class UserLessonSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Video
+        model = UserLesson
         fields = (
-            "title",
-            "base_time",
-            "main_photo",
-            "course"
+            'status',
+            'watched_time'
         )
 
 
+class LessonSerializer(serializers.ModelSerializer):
 
-class CourseSerializer(serializers.ModelSerializer):
+    user_lessons = UserLessonSerializer()
+
     class Meta:
-        model = Course
+        model = Lesson
         fields = (
             "title",
-            "description",
-            "image",
-            "price",
+            "video",
+            "duration",
+            "user_lessons",
         )
+
+
+# class CourseSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Course
+#         fields = (
+#             "title",
+#             "description",
+#             "image",
+#             "price",
+#         )
+
+
 

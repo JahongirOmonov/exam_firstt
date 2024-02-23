@@ -10,7 +10,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    path('exam/', include('exam.urls')),
+    path('api/v1/exam/', include('exam.urls')),
     # User management
     path("users/", include("users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
